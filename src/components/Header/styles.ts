@@ -17,16 +17,26 @@ export const Container = styled.div<ContainerProps>`
     justify-content: space-between;
 
     nav {
-      a {
+      ul li {
+        display: inline;
+        & + li {
+          margin-left: 32px;
+        }
+      }
+
+      ul li > .active {
+        border-bottom: 2px solid #ff872c;
+        opacity: 10;
+      }
+
+      ul li a {
         color: #fff;
         text-decoration: none;
         font-size: 16px;
+        font-weight: 500;
+        padding-bottom: 10px;
         transition: opacity 0.2s;
-
-        & + a {
-          margin-left: 32px;
-        }
-
+        opacity: 0.8;
         &:hover {
           opacity: 0.6;
         }
