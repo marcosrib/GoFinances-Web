@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import income from '../../assets/income.svg';
 import outcome from '../../assets/outcome.svg';
 import total from '../../assets/total.svg';
@@ -11,6 +10,7 @@ import Header from '../../components/Header';
 import formatValue from '../../utils/formatValue';
 
 import { Container, CardContainer, Card, TableContainer } from './styles';
+import formatStringToDateAndMinute from '../../utils/formatDate';
 
 interface Transaction {
   id: string;
@@ -45,6 +45,7 @@ const Dashboard: React.FC = () => {
             transaction.type === 'outcome'
               ? ` - ${formatValue(transaction.value)}`
               : formatValue(transaction.value),
+          formattedDate: formatStringToDateAndMinute(transaction.created_at),
         }),
       );
 
@@ -108,7 +109,7 @@ const Dashboard: React.FC = () => {
                     {transacion.formattedValue}
                   </td>
                   <td>{transacion?.category?.title}</td>
-                  <td>{transacion.created_at}</td>
+                  <td>{transacion.formattedDate}</td>
                 </tr>
               ))}
             </tbody>
