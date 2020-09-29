@@ -31,6 +31,10 @@ Essa aplicação irá conectar com [backend](https://github.com/marcosrib/desafi
 - react-dropzone.
 - react-router-dom.
 - styled-components.
+- date-fns-tz.
+- date-fns.
+- eslint.
+- prettier.
 
 ## :arrow_forward: Como executar:
 No terminal clone o projeto.
